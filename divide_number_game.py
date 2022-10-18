@@ -100,8 +100,9 @@ def game(dim):
 				cnt += 1
 		
 		if cnt == dim:
-			# os.system('cls')
+			os.system('cls')
 			print_board(arr)
+			print('Score:', score)
 			print('\nGAME OVER!\n')
 			break
 
@@ -118,6 +119,7 @@ def game(dim):
 		ok = 0
 		while not ok:
 			def_val = get_random_number(nums)
+			# print('ok')
 			ok = 1
 			for num in nums:
 				if isinstance(num,int) and (num%def_val==0 or def_val%num==0):

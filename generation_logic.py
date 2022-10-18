@@ -14,7 +14,7 @@ def get_primes(n_factors, nums):
 	for i in range(n_factors):
 		idx = 100
 		while idx >= len(primes):
-			p = random.uniform (0, 1)
+			p = random.uniform(0, 1)
 			idx = int(1/p)-1
 		
 		pfs.append(primes[idx])
@@ -22,17 +22,17 @@ def get_primes(n_factors, nums):
 	return pfs
 
 def get_random_number(nums):
-	while 1:	
-		n = get_num_factors()
-		ps = get_primes(n, nums)
-		# print(ps)
+	n = get_num_factors()
+	# print(n)
+	ps = get_primes(n, nums)
+	# print(ps)
 
-		num = 1
+	num = 1
 
-		for i in ps:
-			num *= i
-
-		# print(num)
-
-		if num<=100:
+	for i in ps:
+		if num*i>100:
 			return num
+		num *= i
+
+	return num
+		# print(num)
